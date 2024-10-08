@@ -27,7 +27,7 @@ public class LoadDatabase
             await usuarioManager.AddToRoleAsync(usuario, "ADMIN");
         }
 
-        if(context.Categorias!.Any())
+        if(!context.Categorias!.Any())
         {
             await context.Categorias!.AddRangeAsync(
                 new Categoria {Nombre = "Drama"},
