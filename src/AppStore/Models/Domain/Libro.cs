@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AppStore.Models.Domain;
 
@@ -19,6 +20,13 @@ public class Libro
 
     public virtual ICollection<Categoria>? CategoriaRelationList{get;set;}
     public virtual ICollection<LibroCategoria>? LibroCategoriaRelationList{get;set;}
+
+
+    [NotMapped]
+    public List<int>? Categorias {get; set;}
+
+    [NotMapped]
+    public string? CategoriasNames{get;set;}
 
 
 }

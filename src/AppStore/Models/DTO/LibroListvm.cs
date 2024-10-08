@@ -1,7 +1,7 @@
 namespace AppStore.Models.DTO;
 using AppStore.Models.Domain;
 
-public class LibroListvm
+public class LibroListVm
 {
     public IQueryable<Libro>? LibroList{get;set;}
 
