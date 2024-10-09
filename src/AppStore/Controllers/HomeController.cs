@@ -17,7 +17,7 @@ public class HomeController : Controller
     public IActionResult Index(string term="", int currentPage = 1)
     {
 
-        var libros = _libroService.List(term, true, currentPage);
+        var LibroList = _libroService.List(term, true, currentPage);
         
         return View();
     }

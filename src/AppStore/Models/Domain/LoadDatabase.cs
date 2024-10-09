@@ -62,7 +62,7 @@ public class LoadDatabase
 
         if (!context.LibroCategorias!.Any())
         {
-            await context.LibroCategorias.AddRangeAsync(
+            await context.LibroCategorias!.AddRangeAsync(
                 new LibroCategoria { CategoriaId = 1, LibroId = 1 },
                 new LibroCategoria { CategoriaId = 1, LibroId = 2 }
             );
