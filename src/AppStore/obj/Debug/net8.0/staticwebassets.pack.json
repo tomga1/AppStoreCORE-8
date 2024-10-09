@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\aspnet\\src\\AppStore\\wwwroot\\Uploads\\anillos.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\anillos.jpg"
+    },
+    {
       "Id": "C:\\aspnet\\src\\AppStore\\wwwroot\\Uploads\\catedral.png",
       "PackagePath": "staticwebassets\\Uploads\\catedral.png"
     },

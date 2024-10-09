@@ -10,7 +10,7 @@ public class HomeController : Controller
 
     public HomeController(ILibroService libroService)
         {
-            _libroService = libroService ?? throw new ArgumentNullException(nameof(libroService)); // Verifica que no sea nulo
+            _libroService = libroService;
         }
 
 
@@ -19,6 +19,19 @@ public class HomeController : Controller
 
         var LibroList = _libroService.List(term, true, currentPage);
         
+        return View(LibroList);
+    }
+
+    public IActionResult LibroDetail(int libroId)
+    {
+        var libro = _libroService.GetById(libroId);
+        return View(libro);
+    } 
+
+    public IActionResult About()
+    {
         return View();
     }
+
+
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+biKJKBgiqkEbrAVrpzmRq4mxLpNJXwtW3OWlfilAfk=",
+  "Hash": "SSuFr78Le3WhJNpc/+euqpYQ+jrTDtmkGd7nVBQsHSw=",
   "Source": "AppStore",
   "BasePath": "_content/AppStore",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\aspnet\\src\\AppStore\\wwwroot\\Uploads\\anillos.jpg",
+      "SourceId": "AppStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\aspnet\\src\\AppStore\\wwwroot\\",
+      "BasePath": "_content/AppStore",
+      "RelativePath": "Uploads/anillos.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\anillos.jpg"
     },
     {
       "Identity": "C:\\aspnet\\src\\AppStore\\wwwroot\\Uploads\\catedral.png",
