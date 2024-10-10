@@ -20,6 +20,37 @@ public class UserAuthenticationService : IUserAuthenticationService
     public async Task<Status> LoginAsync(LoginModel login)
     {
         var status = new Status();
+        var user = await userManager.FindByNameAsync(login.Username!);
+
+        if(user is null)
+        {
+            status.StatusCode = 0 ;
+            status.Message = "El username es inválido ";
+            return status;
+        }
+
+        if(!await userManager.CheckPasswordAsync(user , login.Password!))
+        {
+            status.StatusCode = 0 ; 
+            status.Message = "El password es inválido ";
+            return status; 
+        }
+
+        var resultado = await signInManager.PasswordSignInAsync(user, login.Password!, true, false ); 
+
+        if(!resultado.Succeeded)
+        {
+            status.StatusCode = 0 ;
+            status.Message = "Las credenciales son incorrectas !"; 
+
+        }
+        status.StatusCode = 1;
+        status.Message = "Login exitoso ";
+        return status;  
+
+    
+
+
     }
 
     public async Task LogoutAsync()

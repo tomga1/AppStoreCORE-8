@@ -13,6 +13,7 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddScoped<ILibroService , LibroService>();
+builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
 
 
 builder.Services.AddDbContext<DatabaseContext> (opt => {
@@ -50,7 +51,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=UserAuthentication}/{action=Login}/{id?}");
 
 
 using(var ambiente = app.Services.CreateScope())

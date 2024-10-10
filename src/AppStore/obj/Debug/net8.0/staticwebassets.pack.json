@@ -37,8 +37,8 @@
       "PackagePath": "staticwebassets\\Uploads\\viajera.jpg"
     },
     {
-      "Id": "C:\\aspnet\\src\\AppStore\\wwwroot\\css\\form.css",
-      "PackagePath": "staticwebassets\\css\\form.css"
+      "Id": "C:\\aspnet\\src\\AppStore\\wwwroot\\css\\forms.css",
+      "PackagePath": "staticwebassets\\css\\forms.css"
     },
     {
       "Id": "C:\\aspnet\\src\\AppStore\\wwwroot\\css\\style.css",
