@@ -28,5 +28,8 @@ public class Libro
     [NotMapped]
     public string? CategoriasNames{get;set;}
 
+    [NotMapped]
+    public IFormFile? ImageFile{get;set;}
+
 
 }
