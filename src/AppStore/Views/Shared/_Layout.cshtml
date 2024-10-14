@@ -1,3 +1,7 @@
+@{
+    string username = User.Identity!.Name!;
+}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,23 +26,30 @@
         libreria store
     </div>
     <ul class="nav-link">
-        <li><a class="active" href="/index.html">Inicio</a></li>
-        <li><a href="/Home/About">About</a></li>
-        <li>
-            <a href="#">Admin <i class="fa fa-caret-down"></i></a>
-            
-            <ul class="dropdown-nav-link">
-                <li><a href="/forms.html">Form</a></li>
-                <li><a href="/table.html">Table</a></li>
-                <li><a href="/movie-detail.html">Libro Detalle</a></li>
-                <li><a href="#">Link 4</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Login</a></li>
+        <li><a class="active" href="@Url.Action("Index", "Home")">Inicio</a></li>
+        
+        @if(!string.IsNullOrEmpty(username))
+        {
+            <li><a href="/Home/About">About</a></li>
+            <li>
+                <a href="#">Admin <i class="fa fa-caret-down"></i></a>
+                
+                <ul class="dropdown-nav-link">
+                    <li><a href="/forms.html">Categoria</a></li>
+                    <li><a href="/table.html">Libro</a></li>
+                    <li><a href="/UserAuthentication/Logout">Logout</a></li>
+                </ul>
+            </li>
+
+        }
+        @if(string.IsNullOrEmpty(username)){
+            <li><a href="/UserAuthentication/Login">Login</a></li>
+
+        }
     </ul>
     </nav>
     <div class="container">
+
 
         @RenderBody()
         
@@ -46,8 +57,22 @@
 
 
     
-        <footer>
-            &#169; Programacion Web y Diseno 
-        </footer>
+    <footer style="background-color: #f1f1f1; padding: 20px; text-align: center;">
+        <p>&copy; 2024 Libreria Store - Todos los derechos reservados.</p>
+        <p>
+        <a href="#">Inicio</a> | 
+        <a href="#">Novedades</a> | 
+        <a href="#">Contacto</a> | 
+        <a href="#">Política de Privacidad</a>
+    </p>
+    <p>📞 Atención al cliente: +[número] | ✉️ [correo@ejemplo.com]</p>
+    <p>Síguenos en:
+        <a href="#">Instagram</a> | 
+        <a href="#">Facebook</a> | 
+        <a href="#">Twitter</a>
+    </p>
+
+</footer>
+
 </body>
 </html>
