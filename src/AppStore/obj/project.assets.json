@@ -2739,7 +2739,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tomas\\.nuget\\packages\\": {}
+    "C:\\Users\\TGarcia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2747,11 +2747,11 @@
       "projectUniqueName": "C:\\aspnet\\src\\AppStore\\AppStore.csproj",
       "projectName": "AppStore",
       "projectPath": "C:\\aspnet\\src\\AppStore\\AppStore.csproj",
-      "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\TGarcia\\.nuget\\packages\\",
       "outputPath": "C:\\aspnet\\src\\AppStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TGarcia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
