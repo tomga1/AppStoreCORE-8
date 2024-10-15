@@ -3,6 +3,8 @@ namespace AppStore.Controllers;
 using AppStore.Models.Domain;
 using AppStore.Repositories.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 public class LibroController : Controller
 {
     private readonly ILibroService _libroService; 
@@ -20,20 +22,45 @@ public class LibroController : Controller
     [HttpPost]
     public IActionResult Add(Libro libro)
     {
+        libro.CategoriasList = _categoriaService.List().Select(a => new SelectListItem {Text = a.Nombre, Value = a.Id.ToString()});
+
         if(!ModelState.IsValid)
         {
             return View(libro);
         }
         if(libro.ImageFile != null)
         {
-            
+            var resultado = _fileService.SaveImage(libro.ImageFile);
+            if(resultado.Item1 == 0)
+            {
+                TempData["msg"] = "La imagen no pudo guardarse exitosamente ";
+                return View(libro);
+            }
+
+            var imagenName = resultado.Item2;
+            libro.Imagen = imagenName;
+
         }
+
+        var resultadoLibro = _libroService.Add(libro);
+        if(resultadoLibro){
+            TempData["msg"] = "Se agrego el libro exitosamente!";
+            return RedirectToAction(nameof(Add));
+        }
+
+        TempData["msg"] = "Errores guardando el libro";
+        return View(libro);
     }
 
 
     public IActionResult Add()
     {
-        return View();
+        var libro = new Libro();
+        libro.CategoriasList = _categoriaService.List()
+        .Select(a => new SelectListItem {Text = a.Nombre, Value = a.Id.ToString()});
+
+
+        return View(libro);
     }
     
 
@@ -44,7 +71,8 @@ public class LibroController : Controller
 
     public IActionResult LibroList()
     {
-        return View();
+        var libros = _libroService.List();
+        return View(libros);
     }
 
     public IActionResult Delete(int id)
